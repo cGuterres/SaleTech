@@ -11,6 +11,6 @@ namespace TechSale.Repository.DataContext
         public DbSet<Gender> Gender { get; set; }
         public DbSet<Region> Region { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
-        public DbSet<UserSys> UserSys { get; set; }
+        public DbSet<UserSys> UserSys { get; set; } 
     }
 }

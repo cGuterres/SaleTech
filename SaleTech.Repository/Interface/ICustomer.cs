@@ -6,6 +6,7 @@ namespace TechSale.Repository.Interface
 {
     public interface ICustomer
     {
-        Task<List<Customer>> SearchCustomer(int? userId);
+        Task<List<Customer>> SearchCustomerByUserId(int userId);
+        Task<List<Customer>> SearchAllCustomer();
     }
 }

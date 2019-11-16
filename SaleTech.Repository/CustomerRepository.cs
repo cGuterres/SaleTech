@@ -18,22 +18,30 @@ namespace TechSale.Repository
             _context.ChangeTracker.QueryTrackingBehavior = Microsoft.EntityFrameworkCore.QueryTrackingBehavior.NoTracking;
         }
 
-        public async Task<List<Customer>> SearchCustomer(int? userId)
+        public async Task<List<Customer>> SearchAllCustomer()
         {
-            //caso o parametro seja nulo.. deve trazer todos os clientes pois é um adm que está logado            
             IQueryable<Customer> query = _context.Customer
             .Include(city => city.City)
             .Include(region => region.Region)
             .Include(gender => gender.Gender)
             .Include(classification => classification.Classification);
 
+            return await query.OrderBy(c => c.Name).ToListAsync();
+        }
+
+        public async Task<List<Customer>> SearchCustomerByUserId(int userId)
+        {
+            //caso o parametro seja nulo.. deve trazer todos os clientes pois é um adm que está logado            
+            IQueryable<Customer> query = _context.Customer
+            .Include(city => city.City)
+            .Include(region => region.Region)
+            .Include(gender => gender.Gender)
+            .Include(classification => classification.Classification)
+            .Include(us => us.UserSys);
+
             if(query != null && query.ToListAsync().Result.Count > 0)
             {
-                //filtro por usuário
-                if(userId.HasValue)
-                {
-                    query = query.Where(customer => customer.UserId == userId.Value);
-                }
+                query = query.Where(customer => customer.UserSysId.HasValue && customer.UserSysId == userId);
             }
             return await query.OrderBy(c => c.Name).ToListAsync();
         }

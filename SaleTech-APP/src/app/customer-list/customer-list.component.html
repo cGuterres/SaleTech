@@ -1,0 +1,42 @@
+<app-title></app-title>
+<div class="d-flex">
+  <div class="form-inline mr-auto">
+    <div class="form-group mb-2">
+      <label class="mr-2">
+        Nome: 
+      </label>
+      <input type="text" class="form-control mr-2" placeholder="buscar"
+      [(ngModel)]="filterGrid">
+    </div>
+  </div>
+</div>
+
+<h4>Nome: {{filterGrid}}</h4>
+<table class="table table-responsive-lg">
+  <thead class="thead-ligth">
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Phone</th>
+      <th>Gênero</th>
+      <th>Cidade</th>
+      <th>Região</th>
+      <th>Última Compra</th>
+      <th>Classificação</th>
+      <th *ngIf="isAdmin()">Vendedor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of gridFiltered">
+      <td>{{c.id}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.phone}}</td>
+      <td>{{c.gender.name}}</td>
+      <td>{{c.city.name}}</td>
+      <td>{{c.region.name}}</td>
+      <td>{{c.lastPurchase}}</td>
+      <td>{{c.classification.name}}</td>
+      <td *ngIf="isAdmin()">{{c.userSys.login}}</td>
+    </tr>
+  </tbody>
+</table>

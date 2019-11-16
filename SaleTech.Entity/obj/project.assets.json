@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
+      "projectUniqueName": "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
       "projectName": "SaleTech.Entity",
-      "projectPath": "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
+      "projectPath": "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
       "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-      "outputPath": "c:\\Project\\SaleTech\\SaleTech.Entity\\obj\\",
+      "outputPath": "C:\\Project\\SaleTech\\SaleTech.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

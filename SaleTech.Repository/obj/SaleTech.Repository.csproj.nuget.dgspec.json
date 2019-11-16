@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj": {}
+    "C:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj": {}
   },
   "projects": {
-    "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj": {
+    "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
+        "projectUniqueName": "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
         "projectName": "SaleTech.Entity",
-        "projectPath": "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
+        "projectPath": "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj",
         "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-        "outputPath": "c:\\Project\\SaleTech\\SaleTech.Entity\\obj\\",
+        "outputPath": "C:\\Project\\SaleTech\\SaleTech.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -59,14 +59,14 @@
         }
       }
     },
-    "c:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj": {
+    "C:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj",
+        "projectUniqueName": "C:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj",
         "projectName": "SaleTech.Repository",
-        "projectPath": "c:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj",
+        "projectPath": "C:\\Project\\SaleTech\\SaleTech.Repository\\SaleTech.Repository.csproj",
         "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-        "outputPath": "c:\\Project\\SaleTech\\SaleTech.Repository\\obj\\",
+        "outputPath": "C:\\Project\\SaleTech\\SaleTech.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj": {
-                "projectPath": "c:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj"
+              "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj": {
+                "projectPath": "C:\\Project\\SaleTech\\SaleTech.Entity\\SaleTech.Entity.csproj"
               }
             }
           }

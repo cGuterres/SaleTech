@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechSale.Entity
 {
@@ -16,7 +17,7 @@ namespace TechSale.Entity
         public DateTime? LastPurchase { get; set; }
         public int? ClassificationId { get; set; }
         public Classification Classification { get; set; }
-        public int? UserId { get; set; }
+        public int? UserSysId { get; set; }
         public UserSys UserSys { get; set; }
     }
 }

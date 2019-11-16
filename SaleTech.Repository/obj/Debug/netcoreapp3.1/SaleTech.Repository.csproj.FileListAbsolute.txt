@@ -1,0 +1,11 @@
+C:\Project\SaleTech\SaleTech.Repository\bin\Debug\netcoreapp3.1\SaleTech.Repository.deps.json
+C:\Project\SaleTech\SaleTech.Repository\bin\Debug\netcoreapp3.1\SaleTech.Repository.dll
+C:\Project\SaleTech\SaleTech.Repository\bin\Debug\netcoreapp3.1\SaleTech.Repository.pdb
+C:\Project\SaleTech\SaleTech.Repository\bin\Debug\netcoreapp3.1\SaleTech.Entity.dll
+C:\Project\SaleTech\SaleTech.Repository\bin\Debug\netcoreapp3.1\SaleTech.Entity.pdb
+C:\Project\SaleTech\SaleTech.Repository\obj\Debug\netcoreapp3.1\SaleTech.Repository.csprojAssemblyReference.cache
+C:\Project\SaleTech\SaleTech.Repository\obj\Debug\netcoreapp3.1\SaleTech.Repository.AssemblyInfoInputs.cache
+C:\Project\SaleTech\SaleTech.Repository\obj\Debug\netcoreapp3.1\SaleTech.Repository.AssemblyInfo.cs
+C:\Project\SaleTech\SaleTech.Repository\obj\Debug\netcoreapp3.1\SaleTech.Repository.csproj.CopyComplete
+C:\Project\SaleTech\SaleTech.Repository\obj\Debug\netcoreapp3.1\SaleTech.Repository.dll
+C:\Project\SaleTech\SaleTech.Repository\obj\Debug\netcoreapp3.1\SaleTech.Repository.pdb

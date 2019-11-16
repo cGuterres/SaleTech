@@ -1,0 +1,8 @@
+C:\Project\SaleTech\SaleTech.Entity\bin\Debug\netcoreapp3.1\SaleTech.Entity.deps.json
+C:\Project\SaleTech\SaleTech.Entity\bin\Debug\netcoreapp3.1\SaleTech.Entity.dll
+C:\Project\SaleTech\SaleTech.Entity\bin\Debug\netcoreapp3.1\SaleTech.Entity.pdb
+C:\Project\SaleTech\SaleTech.Entity\obj\Debug\netcoreapp3.1\SaleTech.Entity.csprojAssemblyReference.cache
+C:\Project\SaleTech\SaleTech.Entity\obj\Debug\netcoreapp3.1\SaleTech.Entity.AssemblyInfoInputs.cache
+C:\Project\SaleTech\SaleTech.Entity\obj\Debug\netcoreapp3.1\SaleTech.Entity.AssemblyInfo.cs
+C:\Project\SaleTech\SaleTech.Entity\obj\Debug\netcoreapp3.1\SaleTech.Entity.dll
+C:\Project\SaleTech\SaleTech.Entity\obj\Debug\netcoreapp3.1\SaleTech.Entity.pdb
