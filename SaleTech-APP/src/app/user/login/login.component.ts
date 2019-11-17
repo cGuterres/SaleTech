@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       () => {
         this.router.navigate(['/customer']);
       }, error => {
-        this.toastr.error('O e-mail e / ou a senha digitados são inválidos. Por favor, tente novamente.');
+        this.toastr.error('The email and/or password entered is invalid. Please try again.');
       });
   }
 }

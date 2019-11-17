@@ -23,10 +23,10 @@ export class UserService {
 
   public get currentUserValue(): UserSys {
     return this.currentUserSubject.value;
-}
+  }
 
   login(model: any) {
-    return this.http.post(`${this.baseURL}login`, model).pipe(
+    return this.http.post(`${this.baseURL}/login`, model).pipe(
       map((response: any) => {
         const user = response;
         if (user) {
@@ -47,5 +47,9 @@ export class UserService {
 
   getUser(id: number): Observable<UserSys> {
     return this.http.get<UserSys>(`${this.baseURL}/${id}`);
+  }
+
+  searchAllSellers(): Observable<UserSys[]> {
+    return this.http.get<UserSys[]>(this.baseURL);
   }
 }

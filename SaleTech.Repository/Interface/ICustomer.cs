@@ -8,5 +8,9 @@ namespace TechSale.Repository.Interface
     {
         Task<List<Customer>> SearchCustomerByUserId(int userId);
         Task<List<Customer>> SearchAllCustomer();
+        Task <List<Gender>> SearchAllGenders();
+        Task <List<City>> SearchAllCities();
+        Task <List<Region>> SearchAllRegions();
+        Task <List<Classification>> SearchAllClassifications();
     }
 }

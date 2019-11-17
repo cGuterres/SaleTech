@@ -42,6 +42,22 @@ namespace SaleTech.API.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var results = await _repo.SearchAllSellers();
+
+                return Ok(results);
+            }
+            catch (System.Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Banco de dados sem acesso. {ex.Message}");
+            }
+        }
+
         [HttpPost("login")]
         [AllowAnonymous]
         public async Task<IActionResult> Login(UserSys user)

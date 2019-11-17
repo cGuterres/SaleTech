@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,14 @@ namespace SaleTech.Repository
                 query = query.Where(u => u.Id == id);
             }
             return query != null ? await query.FirstOrDefaultAsync() : null;
+        }
+
+        public async Task<List<UserSys>> SearchAllSellers()
+        {
+            IQueryable<UserSys> query = _repo.UserSys
+            .Include(ur => ur.UserRole);
+            // retorna apenas os usuários que não são admin
+            return await query.Where(u => !u.UserRole.IsAdmin).ToListAsync();
         }
     }
 }

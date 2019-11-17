@@ -15,7 +15,7 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.baseURL);
   }
 
-  SearchCustomerByUserId(userId: number): Observable<Customer[]> {
+  searchCustomerByUserId(userId: number): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.baseURL}/${userId}`);
   }
 }

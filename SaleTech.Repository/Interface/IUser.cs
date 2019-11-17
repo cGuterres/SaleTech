@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TechSale.Entity;
 
@@ -7,5 +8,6 @@ namespace SaleTech.Repository.Interface
     {
         Task<UserSys> FindUser(string email, string password);
         Task<UserSys> GetUser(int id);
+        Task<List<UserSys>> SearchAllSellers();
     }
 }
