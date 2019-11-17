@@ -15,7 +15,7 @@ export class UserService {
   private currentUserSubject: BehaviorSubject<UserSys>;
   public currentUser: Observable<UserSys>;
 
-  //chamadas para a controller
+  // chamadas para a controller
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<UserSys>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -41,7 +41,7 @@ export class UserService {
 
   loggedIn() {
     const token = localStorage.getItem('token');
-    //verifica se o token está ativo ainda
+    // verifica se o token está ativo ainda
     return !this.jwtHelper.isTokenExpired(token);
   }
 

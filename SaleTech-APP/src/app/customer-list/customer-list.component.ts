@@ -12,6 +12,8 @@ import { Region } from '../_models/Region';
 import { RegionService } from '../_service/Region.service';
 import { Classification } from '../_models/Classification';
 import { ClassificationService } from '../_service/Classification.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Filter } from '../_models/Filter';
 
 @Component({
   selector: 'app-customer-list',
@@ -30,6 +32,10 @@ export class CustomerListComponent implements OnInit {
   listClassifications: Classification[];
   listSellers: UserSys[] = [];
 
+  registerForm: FormGroup;
+
+  filter: Filter;
+
   constructor(
     private customerService: CustomerService
   , private toastr: ToastrService
@@ -38,10 +44,12 @@ export class CustomerListComponent implements OnInit {
   , private cityService: CityService
   , private regionService: RegionService
   , private classificationService: ClassificationService
+  , private fb: FormBuilder
     ) {
       this.currentUser = this.userService.currentUserValue;
     }
 
+  // tslint:disable-next-line: variable-name
   _filterGrid: string;
   get filterGrid(): string {
     return this._filterGrid;
@@ -53,6 +61,8 @@ export class CustomerListComponent implements OnInit {
   }
 
   ngOnInit() {
+    //apenas para zerar os campos na pesquisa
+    this.validate();
     // carrega os generos do BD
     this.getAllGenders();
     // carrega as cidades
@@ -157,5 +167,64 @@ searchCustomerByFilter(filtered: string): Customer [] {
     , error => {
       this.toastr.error(`Error trying to load sellers: ${error}`);
     });
+  }
+
+  validate() {
+    this.registerForm = this.fb.group({
+      name: [''],
+      genderId: [''],
+      cityId: [''],
+      regionId: [''],
+      classificationId: [''],
+      sellerId: [''],
+      lastPurchase: ['']
+    });
+  }
+
+  clearFields() {
+    this.registerForm.reset();
+    // reinicia os valores do formulário com vazio
+    this.registerForm.patchValue({
+      name: '',
+      genderId: '',
+      cityId: '',
+      regionId: '',
+      classificationId: '',
+      sellerId: '',
+      lastPurchase: ''
+    });
+    this.gridFiltered = this.listCustomers;
+    return this.gridFiltered;
+  }
+
+  search() {
+    // classe auxiliar para realização dos filtros
+    this.filter = Object.assign({}, this.registerForm.value);
+    // zera a lista
+    this.gridFiltered = [];
+    for (const c of this.listCustomers) {
+      if (this.filter.genderId.toString() !== '' && this.filter.cityId.toString() !== '' &&
+          this.filter.classificationId.toString() !== '' && this.filter.regionId.toString() !== '' &&
+          this.filter.sellerId.toString() !== '') {
+          if (c.name.toLowerCase().indexOf(this.filter.name) !== -1 &&
+            c.genderId.toString() === this.filter.genderId.toString() &&
+            c.classificationId.toString() === this.filter.classificationId.toString() &&
+            c.regionId.toString() === this.filter.regionId.toString() &&
+            c.userSysId.toString() === this.filter.sellerId.toString() &&
+            c.cityId.toString() === this.filter.cityId.toString()) {
+          this.gridFiltered.push(c);
+        }
+      } else if (c.genderId.toString() === this.filter.genderId.toString()) {
+          this.gridFiltered.push(c);
+      } else if (c.regionId.toString() === this.filter.regionId.toString()) {
+        this.gridFiltered.push(c);
+      } else if (c.classificationId.toString() === this.filter.classificationId.toString()) {
+        this.gridFiltered.push(c);
+      } else if (c.userSysId.toString() === this.filter.sellerId.toString()) {
+        this.gridFiltered.push(c);
+      } else if (this.filter.name !== '' && c.name.toLowerCase().indexOf(this.filter.name) !== -1) {
+        this.gridFiltered.push(c);
+      }
+    }
   }
 }

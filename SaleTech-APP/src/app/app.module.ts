@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleComponent } from './_shared/title/title.component';
 import { UserService } from './_service/User.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
@@ -39,7 +39,8 @@ import { BsDropdownModule } from 'ngx-bootstrap';
          timeOut: 3000,
          preventDuplicates: true,
          progressBar: true
-       })
+       }),
+       ReactiveFormsModule
    ],
    providers: [
       CustomerService,

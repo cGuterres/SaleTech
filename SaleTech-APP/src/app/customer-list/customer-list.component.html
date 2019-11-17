@@ -1,66 +1,77 @@
 <app-title></app-title>
-
-<div class="form-row">
-  <div class="form-group col-md-5">
+<!-- MODELO DE PESQUISA COM TWO WAY DATA BINDING
+ <div class="form-row">
+  <div class="form-group col-md-12">
     <label class="mr-2">
       Name
     </label>
     <input type="text" class="form-control mr-2" placeholder="find customer"
     [(ngModel)]="filterGrid">
   </div>
-  <div class="form-group col-md-4">
-    <label>Gender </label>
-    <select class="form-control">
-      <option *ngFor="let g of listGenders" value= {{g.id}}>
-        {{g.name}}
-      </option>    
-    </select> 
-  </div>
-  <div class="d-flex">
+</div> -->
+<form [formGroup]="registerForm">
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label class="mr-2">
+        Name
+      </label>
+      <input type="text" class="form-control mr-2" placeholder="find customer"
+      formControlName="name">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Gender </label>
+      <select class="form-control" formControlName="genderId">
+        <option *ngFor="let g of listGenders" value= {{g.id}}>
+          {{g.name}}
+        </option>    
+      </select> 
+    </div>
+    <div class="d-flex">
+      <div class="form-group col-md-3">
+        <button class="btn btn-outline-primary" (click)="search()">&nbsp;Search</button>
+      </div>
+    </div>
+  </div> 
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>City </label>
+      <select class="form-control" formControlName="cityId">
+        <option *ngFor="let city of listCities" value= {{city.id}}>
+          {{city.name}}
+        </option>    
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Region </label>
+      <select class="form-control" formControlName="regionId">
+        <option *ngFor="let region of listRegions" value= {{region.id}}>
+          {{region.name}}
+        </option>    
+      </select>
+    </div>
     <div class="form-group col-md-3">
-      <button class="btn btn-outline-primary">&nbsp;Search</button>
+      <button class="btn btn-outline-primary" (click)="clearFields()">&nbsp;Clear Fields</button>
     </div>
   </div>
-</div> 
-<div class="form-row">
-  <div class="form-group col-md-5">
-    <label>City </label>
-    <select class="form-control">
-      <option *ngFor="let city of listCities" value= {{city.id}}>
-        {{city.name}}
-      </option>    
-    </select>
-  </div>
-  <div class="form-group col-md-4">
-    <label>Region </label>
-    <select class="form-control">
-      <option *ngFor="let region of listRegions" value= {{region.id}}>
-        {{region.name}}
-      </option>    
-    </select>
-  </div>
-  <div class="form-group col-md-3">
-    <button class="btn btn-outline-primary">&nbsp;Clear Fields</button>
-  </div>
-</div>
-<div class="form-row">
+  <div class="form-row">
     <div class="form-group col-md-5">
       <label>Classification</label>
-        <select class="form-control">
-          <option *ngFor="let cla of listClassifications" value= {{cla.id}}>
-            {{cla.name}}
-          </option>    
-        </select>
+      <select class="form-control" formControlName="classificationId">
+        <option *ngFor="let cla of listClassifications" value= {{cla.id}}>
+          {{cla.name}}
+        </option>    
+      </select>
     </div>
     <div *ngIf="isAdmin()" class="form-group col-md-4">
       <label>Seller</label>
-      <select class="form-control">
+      <select class="form-control" formControlName="sellerId">
         <option *ngFor="let seller of listSellers" value= {{seller.id}}>
           {{seller.login}}
         </option>    
       </select>
     </div>
-</div>
+  </div>
+</form>
 <table class="table table-responsive-lg">
   <thead class="thead-ligth">
     <tr>
@@ -82,7 +93,7 @@
       <td>{{c.gender.name}}</td>
       <td>{{c.city.name}}</td>
       <td>{{c.region.name}}</td>
-      <td>{{c.lastPurchase | date: 'dd/MM/yyyy'}}</td>
+      <td>{{c.lastPurchase | date: 'yyyy/MM/dd'}}</td>
       <td *ngIf="isAdmin()">{{c.userSys.login}}</td>
     </tr>
   </tbody>
